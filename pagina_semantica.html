@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mi Sitio — Versión Semántica</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root { --maxw: 900px; }
+    body { font-family: system-ui, sans-serif; max-width: var(--maxw); margin: 2rem auto; line-height: 1.5; }
+    header, nav, main, aside, footer, article, section { padding: 12px; border: 1px solid #ddd; margin-bottom: 12px; border-radius: 6px; }
+    nav a { margin-right: 8px; }
+    .label { font-weight: bold; }
+    .date { color: #666; }
+    blockquote { margin: 0; padding-left: 12px; border-left: 4px solid #ddd; font-style: italic; }
+    .layout { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    @media (min-width: 900px) {
+      .layout { grid-template-columns: 2fr 1fr; }
+      aside { margin-bottom: 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mi Blog Personal</h1>
+    <nav aria-label="Navegación principal">
+      <a href="#" title="Ir al inicio">Inicio</a>
+      <a href="#" title="Ver artículos">Artículos</a>
+      <a href="#contacto" title="Ir a contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <main id="contenido">
+      <article aria-labelledby="titulo-articulo">
+        <header>
+          <h2 id="titulo-articulo">Novedades de HTML5</h2>
+          <p class="date">
+            Publicado el
+            <time datetime="2024-12-20">20/12/2024</time>
+          </p>
+        </header>
+
+        <p>HTML5 trae nuevas etiquetas <em>muy interesantes</em> para mejorar la web.</p>
+
+        <section aria-label="Cita destacada">
+          <blockquote cite="https://www.goodreads.com/quotes/333602-books-are-a-uniquely-portable-magic">
+            “a uniquely portable magic”
+            <cite> — Stephen King</cite>
+          </blockquote>
+        </section>
+
+        <section aria-label="Referencia y enlaces">
+          <p>
+            <span class="label">URL:</span>
+            <a href="https://www.example.com">Visitar ejemplo.com</a>
+          </p>
+          <p>
+            Visita a la
+            <abbr title="World Health Organization">WHO</abbr>
+            para más información.
+          </p>
+        </section>
+      </article>
+    </main>
+
+    <aside aria-labelledby="acerca" role="complementary">
+      <section>
+        <h3 id="acerca">Acerca de</h3>
+        <p>Desarrollador web y escritor ocasional.</p>
+      </section>
+
+      <section id="contacto" aria-label="Contacto">
+        <h3>Contacto</h3>
+        <address>
+          <span class="label">Email:</span>
+          <a href="mailto:contacto@ejemplo.com">contacto@ejemplo.com</a>
+        </address>
+      </section>
+    </aside>
+  </div>
+
+  <footer>
+    <p>© <time datetime="2025">2025</time> Mi Sitio</p>
+    <p>Hecho con <em>café</em> y paciencia.</p>
+  </footer>
+</body>
+</html>
